@@ -22,7 +22,25 @@ const inputChanged = (payload) => ({
 	payload
 });
 
+const onBtnArrow = (payload) => ({
+	type: 'ON_BTN_ARROW',
+	payload
+});
+
+const onBtnPagin = (payload) => ({
+	type: 'ON_BTN_PAGIN',
+	payload
+});
+
+const onSortUsers = (payload) => ({
+	type: 'ON_SORT_USERS',
+	payload
+});
+
 export {
 	fetchUsersData,
-	inputChanged
+	inputChanged,
+	onBtnArrow,
+	onBtnPagin,
+	onSortUsers
 };

@@ -1,0 +1,61 @@
+.boxPagination {
+	display: flex;
+	justify-content: space-between;
+	box-sizing: border-box;
+	padding-left: 41px;
+	padding-right: 26px;
+	padding-bottom: 12px;
+	width: 100%;
+}
+
+.pagination {
+	display: flex;
+	align-self: flex-end;
+	min-width: 104px;
+	height: 25px;
+}
+
+.itemBtnMain {
+	display: flex;
+	align-items: center;
+	margin-right: 13px;
+	&:last-of-type {
+		margin-right: 0;
+	}
+}
+
+.btnMain {
+	font-size: 18px;
+	font-weight: 700;
+	font-style: italic;
+	line-height: 21px;
+	color: #474955;
+	&:hover, &:focus {
+		color: rgba(71, 73, 85, .7);
+	}
+}
+
+.activeBtnMain {
+	font-size: 18px;
+	font-weight: 700;
+	font-style: italic;
+	line-height: 21px;
+	color: #7EBC3C;
+	&:hover, &:focus {
+		color: rgba(126, 188, 60, .7);
+	}
+}
+
+.btnArrowPrev, .btnArrowNext {
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 28px;
+	color: #474955;
+	
+	&:hover, &:focus {
+		color: rgba(71, 73, 85, .8);
+	}
+	&:disabled {
+		color:rgb(160, 158, 158);
+	}
+}

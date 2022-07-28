@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 import {compose, withTableService} from '../hoc';
-import {fetchUsersData} from '../../actions';
+import {fetchUsersData, onSortUsers} from '../../actions';
 
 import Spinner from '../spinner';
 import ErrorIndicator from '../error-indicator';
@@ -14,8 +14,7 @@ class UsersTable extends Component {
 		this.props.fetchUsersData();
 	}
 
-	createRow = (user, idx, arr) => {
-		//const userData = arr[arr.length - idx - 1];
+	createRow = (user) => {
 		const {id, title, body} = user;
 
 		return (
@@ -28,7 +27,7 @@ class UsersTable extends Component {
 	}
 
 	render() {
-		const {visibleUsers, loading, error} = this.props;
+		const {visibleUsers, loading, error, onSortUsers} = this.props;
 		const contentUsers = visibleUsers ?  visibleUsers.map(this.createRow) : null;
 
 		if (loading) { 
@@ -44,9 +43,18 @@ class UsersTable extends Component {
 			<table className={styles.tableUsers}>
 				<thead>
 					<tr className={styles.rowTheadUsers}>
-						<th className={styles.userHindex}>ID</th>
-						<th className={styles.userHheading}>Заголовок</th>
-						<th className={styles.userHdescription}>Описание</th>
+						<th 	className={styles.userHindex} tabIndex={1}
+								onClick={() => onSortUsers('id')}>
+							ID
+						</th>
+						<th 	className={styles.userHheading} tabIndex={2}
+								onClick={() => onSortUsers('heading')}>
+							Заголовок
+						</th>
+						<th 	className={styles.userHdescription} tabIndex={3}
+								onClick={() => onSortUsers('description')}>
+							Описание
+						</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -69,6 +77,7 @@ const mapStateToProps = ({visibleUsers, dataUsersLoading, dataUsersError}) => ({
 
 const mapDispatchToProps = (dispatch, {getUsers}) => ({
 	fetchUsersData: () => fetchUsersData(getUsers, dispatch)(),
+	onSortUsers: (payload) => dispatch(onSortUsers(payload))
 });
 
 export default compose(

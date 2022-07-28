@@ -1,12 +1,11 @@
 .tableUsers {
-	//margin-bottom: 19px;
+	margin-bottom: 18px;
 	width: 100%;
 	border-collapse: collapse;
 }
 
 .rowTheadUsers {
 	height: 54px;
-	background: #474955;
 	box-shadow: 0 4px 27px 0 rgba(230,231,234, .78);
 
 	& th {
@@ -17,6 +16,23 @@
 		font-weight: 500;	
 		text-align: left;
 		color: #fff;
+		background: #474955;
+		&:first-of-type {
+			border-left: 1px solid #474955;
+		}
+		&:last-of-type {
+			border-right: 1px solid #474955;
+		}
+		&:hover, &:focus {
+			background: rgba(71, 73, 85, .7);
+			cursor: pointer;
+			&:first-of-type {
+				border-left: 1px solid rgba(71, 73, 85, .7);
+			}
+			&:last-of-type {
+				border-right: 1px solid rgba(71, 73, 85, .7);
+			}
+		}
 
 		&::after, &::before {
 			content:'';
@@ -34,6 +50,7 @@
 }
 
 .rowTbodyUser {
+	border-left: 1px solid #E3E6EC;
 	& td {
 		box-sizing: border-box;
 		padding: 15px 0;
@@ -45,9 +62,9 @@
 		border-right: 1px solid #E3E6EC;
 		border-bottom: 1px solid #E3E6EC;
 
-		&:first-of-type {
-			border-left: 1px solid #E3E6EC;
-		}
+		// &:first-of-type {
+		// 	border-left: 1px solid #E3E6EC;
+		// }
 	}
 }
 

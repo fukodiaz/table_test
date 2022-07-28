@@ -1,17 +1,25 @@
-import React, {Component} from 'react';
+import React from 'react';
+import {Routes, Route} from 'react-router-dom';
 
 import BoxSearchUsers from '../box-search-users';
 import UsersTable from '../users-table';
+import PaginationUsers from '../pagination-users';
+//import MainPage from '../main-page';
 import styles from './app.m.less';
 
-export default class App extends Component {
+const App = () => {
+	return (
+		<div className={styles.mainWrapper}>
+			<BoxSearchUsers />
+				<Routes>
+					<Route path="/">
+						<Route path="" element={<UsersTable />} />
+						<Route path=":id" element={<UsersTable />} />
+					</Route>
+				</Routes>
+			<PaginationUsers />
+		</div>
+	);
+};
 
-	render() {
-		return (
-			<div className={styles.mainWrapper}>
-				<BoxSearchUsers />
-				<UsersTable />
-			</div>
-		);
-	}
-}
+export default App;
