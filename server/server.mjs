@@ -5,18 +5,18 @@ import createPath from './helpers/create-path.mjs';
 import {router as usersRouter} from './routers/users-router.mjs';
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const corsOptions = {
-	origin: 'http://localhost:8080',
+	origin: 'https://table-test-spa.herokuapp.com/', //'http://localhost:8080',
 	//credentials: true,
 	optionSuccessStatus: 200
 };
 
 app.use(cors(corsOptions));
-
-// app.use(express.json());
-// app.use(express.urlencoded({extended: false}));
 app.use(express.static('dist'));
+app.use(app.rewriter({
+	'/api/*': '/$1',
+}));
 
 app.use('/users', usersRouter);
 

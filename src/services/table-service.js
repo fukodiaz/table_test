@@ -1,6 +1,7 @@
 export default class TableService {
 
-	_apiBase= 'http://localhost:3000';
+	// _apiBase= 'http://localhost:3000';
+	_apiBase= 'https://table-test-spa.herokuapp.com/api';
 
 	getResource = async (url) => {
 		const res = await fetch(`${this._apiBase}${url}`);
