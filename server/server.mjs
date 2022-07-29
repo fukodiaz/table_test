@@ -14,9 +14,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.static('dist'));
-app.use(app.rewriter({
-	'/api/*': '/$1',
-}));
+app.use(rewrite('/api/*', '/$1'));
 
 app.use('/users', usersRouter);
 
