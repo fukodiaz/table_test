@@ -4,7 +4,6 @@ import {Routes, Route} from 'react-router-dom';
 import BoxSearchUsers from '../box-search-users';
 import UsersTable from '../users-table';
 import PaginationUsers from '../pagination-users';
-//import MainPage from '../main-page';
 import styles from './app.m.less';
 
 const App = () => {
