@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import createPath from './helpers/create-path.mjs';
+import rewrite from 'express-urlrewrite';
 
 import {router as usersRouter} from './routers/users-router.mjs';
 
