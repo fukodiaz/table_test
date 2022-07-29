@@ -26,6 +26,7 @@ class UsersTable extends Component {
 		);
 	}
 
+
 	render() {
 		const {visibleUsers, loading, error, onSortUsers} = this.props;
 		const contentUsers = visibleUsers ?  visibleUsers.map(this.createRow) : null;

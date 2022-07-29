@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
+import {compose, withRouter} from '../hoc';
 import {onBtnArrow, onBtnPagin} from '../../actions';
 import styles from './pagination-users.m.less';
 
@@ -34,10 +35,10 @@ class PaginationUsers extends Component {
 	}
 
 	componentDidUpdate(prevProps, prevState) {
-		const {total, activeIdx, start, range, onBtnPagin} = this.props;
+		const {total, activeIdx, start, range, onBtnPagin, navigate} = this.props;
 		const {arrCountVisBtns} = this.state;
 
-		if (prevProps.total !== total || prevProps.start !== start) {
+		if (prevProps.total !== total || prevProps.start !== start) { 
 			if (total) {
 				for (let i = start, arr = []; i <= total && arr.length < range; i++) {
 					arr = [...arr, i];
@@ -67,6 +68,7 @@ class PaginationUsers extends Component {
 
 		if (prevProps.activeIdx !== activeIdx || prevProps.total !== total) {
 			this.defineAbledBtnDirection(this.props.activeIdx, this.props.total);
+			navigate(`/${activeIdx+1}`);
 		}
 	}
 
@@ -135,4 +137,7 @@ const mapDispatchToProps = (dispatch) => ({
 	onBtnPagin: (payload) => dispatch(onBtnPagin(payload))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(PaginationUsers);
+export default compose(
+	withRouter,
+	connect(mapStateToProps, mapDispatchToProps)
+)(PaginationUsers);
