@@ -21,9 +21,9 @@ app.use('/users', usersRouter);
 
 app.listen(PORT);
 
-app.get('/', (req, res) => {
-	res.sendFile(createPath('index'));
-});
+// app.get('/', (req, res) => {
+// 	res.sendFile(createPath('index'));
+// });
 
 app.use((req, res) => {
 	res
