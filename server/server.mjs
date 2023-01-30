@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import createPath from './helpers/create-path.mjs';
+//import createPath from './helpers/create-path.mjs';
 import rewrite from 'express-urlrewrite';
 
 import {router as usersRouter} from './routers/users-router.mjs';
@@ -14,14 +14,14 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.use(express.static('dist'));
+//app.use(express.static('dist')); //for dev
 app.use(rewrite('/api/*', '/$1'));
 
 app.use('/users', usersRouter);
 
 app.listen(PORT);
 
-// app.get('/', (req, res) => {
+// app.get('/', (req, res) => { //for dev
 // 	res.sendFile(createPath('index'));
 // });
 
