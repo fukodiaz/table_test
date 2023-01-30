@@ -25,6 +25,11 @@ app.listen(PORT);
 // 	res.sendFile(createPath('index'));
 // });
 
+app.get('/', (req, res) => {
+	res.status(200).type('text/plain');
+	res.send('Home page...');
+});
+
 app.use((req, res) => {
 	res
 		.status(404)
