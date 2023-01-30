@@ -8,7 +8,7 @@ import {router as usersRouter} from './routers/users-router.mjs';
 const app = express();
 const PORT = process.env.PORT || 3000;
 const corsOptions = {
-	origin: 'https://table-test-spa.herokuapp.com/', //'http://localhost:8080',
+	origin: '*',//'https://table-test-spa.herokuapp.com/', //'http://localhost:8080',
 	//credentials: true,
 	optionSuccessStatus: 200
 };
