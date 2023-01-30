@@ -5,7 +5,7 @@
 	"license": "ISC",
 	"main": "server.mjs",
 	"scripts": {
-		"start": "NODE_ENV=production node --experimental-modules --es-module-specifier-resolution=node server.mjs"
+		"start": "node --experimental-modules --es-module-specifier-resolution=node server.mjs"
 	},
 	"dependencies": {
 		"clone": "^2.1.2",
