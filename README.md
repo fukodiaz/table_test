@@ -9,4 +9,4 @@
 7. сборка проекта осуществялется через webpack;
 8. при стилизации используется препроцессор Less
 
-ссылка на сайт https://table-test-spa.herokuapp.com/
+ссылка на сайт https://table-test-psi.vercel.app/

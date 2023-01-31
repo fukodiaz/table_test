@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 	// 	}
 	// })
 
-	const file = path.join(process.cwd(), 'server', 'data', 'db.json');
+	const file = path.join(process.cwd(), 'server', 'data', 'db.json'); //add 'server' only for production
 	const dataUsers = fs.readFileSync(file, 'utf8');
 
 	res.setHeader('Content-Type', 'application/json');
