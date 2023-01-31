@@ -2,7 +2,7 @@ export default class TableService {
 
 	// _apiBase= 'http://localhost:3000';
 	//_apiBase= 'https://table-test-spa.herokuapp.com/api';
-	_apiBase= 'https://table-test-api.vercel.app/api';
+	_apiBase= 'https://table-test-api.vercel.app';
 
 	getResource = async (url) => {
 		const res = await fetch(`${this._apiBase}${url}`);

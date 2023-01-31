@@ -8,14 +8,13 @@ import {router as usersRouter} from './routers/users-router.mjs';
 const app = express();
 const PORT = process.env.PORT || 3000;
 const corsOptions = {
-	origin: 'https://table-test-psi.vercel.app',//'https://table-test-spa.herokuapp.com/', //'http://localhost:8080',
-	//credentials: true,
+	origin: 'https://table-test-psi.vercel.app',
 	optionSuccessStatus: 200
 };
 
 app.use(cors(corsOptions));
 //app.use(express.static('dist')); //for dev
-app.use(rewrite('/api/*', '/$1'));
+//app.use(rewrite('/api/*', '/$1'));
 
 app.use('/users', usersRouter);
 
