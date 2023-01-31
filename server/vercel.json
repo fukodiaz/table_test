@@ -12,10 +12,7 @@
 	"routes": [
 		{
 			"src": "/(.*)",
-			"dest": "server.mjs",
-			"config": {
-				"includeFiles": ["data/db.json"]
-			}
+			"dest": "server.mjs"
 		}
 	]
 }
