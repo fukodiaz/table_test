@@ -16,7 +16,13 @@ export default class TableService {
 	}
 
 	getUsers = async () => {
-		const res = await this.getResource(`/users`);
+		const res = await this.getResource(`/users`, {
+			mode: 'cors',
+			headers: {
+				'Access-Control-Allow-Origin': '*',
+				'Content-type': 'application/json'
+			}
+		});
 		return res;
 	}
 }
