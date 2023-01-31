@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 	// 	}
 	// })
 
-	const file = path.join(process.cwd(), 'data', 'db.json');
+	const file = path.join(process.cwd(), 'server', 'data', 'db.json');
 	const dataUsers = fs.readFileSync(file, 'utf8');
 
 	res.setHeader('Content-Type', 'application/json');
