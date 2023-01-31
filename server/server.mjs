@@ -35,3 +35,5 @@ app.use((req, res) => {
 		.status(404)
 		.send('<h1>Error! Something wrong happened ..!</h1>')
 });
+
+export default app;
