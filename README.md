@@ -10,3 +10,5 @@
 8. при стилизации используется препроцессор Less
 
 ссылка на сайт https://table-test-psi.vercel.app/
+# Preview
+<image src='assets/table.png' alt='страница с таблицой'>
